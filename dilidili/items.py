@@ -20,6 +20,7 @@ class DilidiliItem(scrapy.Item):
     anime_company = scrapy.Field()
     anime_cast = scrapy.Field()
     anime_status = scrapy.Field()
-    anime_url= scrapy.Field()
+    anime_url = scrapy.Field()
+    anime_set_number = scrapy.Field()
 
     #pass

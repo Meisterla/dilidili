@@ -64,5 +64,10 @@ class DilidiliSpider(scrapy.Spider):
         item['anime_view'] = anime_info.xpath(
             '//div[@class="d_label2"]//b[text() = "看点："]/parent::div/text()').extract()
         item['anime_url'] = anime_info.xpath('//div[@id="content1"]/a/@data-url').extract()
+        anime_set_number = response.xpath('//div[@class="container clear"]//div[@class="clear"]//'
+                                          'div[@class="aside_cen2"]//div[@class="con24 m-10 xf_news"]//'
+                                          'div[@class="time_pic list"]//div[@class="time_con"][1]//'
+                                          'div[@class="swiper-wrapper mb20"]//a/@href').extract()
+        item['anime_set_number'] = len(anime_set_number)
         yield item
 
